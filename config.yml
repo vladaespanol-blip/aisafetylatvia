@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "news_section"
+    label: "News & Events"
+    files:
+      - label: "All News & Events Cards"
+        name: "news_items"
+        file: "content/news.json"
+        fields:
+          - label: "Cards (News & Events)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.category_en}} — {{fields.title_en}}"
+            fields:
+              - label: "Category (English)"
+                name: "category_en"
+                widget: "select"
+                options: ["UPCOMING EVENTS", "COMMUNITY NEWS", "RESEARCH & IDEAS"]
+                default: "COMMUNITY NEWS"
+              - label: "Category (Latvian)"
+                name: "category_lv"
+                widget: "select"
+                options: ["Gaidāmie pasākumi", "Kopienas jaunumi", "Pētniecība un idejas"]
+                default: "Kopienas jaunumi"
+              - label: "Date or Badge (English)"
+                name: "tag_en"
+                widget: "string"
+                default: "New"
+                required: false
+              - label: "Date or Badge (Latvian)"
+                name: "tag_lv"
+                widget: "string"
+                default: "Jauns"
+                required: false
+              - label: "Title (English)"
+                name: "title_en"
+                widget: "string"
+              - label: "Title (Latvian)"
+                name: "title_lv"
+                widget: "string"
+              - label: "Description (English)"
+                name: "body_en"
+                widget: "text"
+              - label: "Description (Latvian)"
+                name: "body_lv"
+                widget: "text"
+              - label: "Link Text (English, optional)"
+                name: "link_text_en"
+                widget: "string"
+                required: false
+              - label: "Link Text (Latvian, optional)"
+                name: "link_text_lv"
+                widget: "string"
+                required: false
+              - label: "Link URL (optional)"
+                name: "link_url"
+                widget: "string"
+                required: false
+              - label: "Is Placeholder Card?"
+                name: "is_placeholder"
+                widget: "boolean"
+                default: false
+                required: false

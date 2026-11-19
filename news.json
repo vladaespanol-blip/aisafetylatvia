@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "category_en": "UPCOMING EVENTS",
+      "category_lv": "Gaidāmie pasākumi",
+      "tag_en": "Watch this space",
+      "tag_lv": "Sekojiet līdzi",
+      "title_en": "Watch this space",
+      "title_lv": "Sekojiet līdzi jaunumiem",
+      "body_en": "We will announce future gatherings and activities here as they are confirmed.",
+      "body_lv": "Šeit paziņosim par gaidāmajām tikšanās reizēm un pasākumiem, tiklīdz tie tiks apstiprināti.",
+      "link_text_en": "",
+      "link_text_lv": "",
+      "link_url": "",
+      "is_placeholder": true
+    },
+    {
+      "category_en": "COMMUNITY NEWS",
+      "category_lv": "Kopienas jaunumi",
+      "tag_en": "Update",
+      "tag_lv": "Jaunums",
+      "title_en": "Updates from AI Safety Latvia",
+      "title_lv": "AI Safety Latvia aktualitātes",
+      "body_en": "News about our initiatives and opportunities to connect will be published here.",
+      "body_lv": "Šeit tiks publicētas ziņas par mūsu iniciatīvām un iespējām iesaistīties.",
+      "link_text_en": "",
+      "link_text_lv": "",
+      "link_url": "",
+      "is_placeholder": true
+    },
+    {
+      "category_en": "RESEARCH & IDEAS",
+      "category_lv": "Pētniecība un idejas",
+      "tag_en": "LinkedIn",
+      "tag_lv": "LinkedIn",
+      "title_en": "What we're reading",
+      "title_lv": "Ko mēs lasām",
+      "body_en": "For regular research highlights and articles, visit our LinkedIn page.",
+      "body_lv": "Regulārus pētījumu apskatus un rakstus atradīsiet mūsu LinkedIn lapā.",
+      "link_text_en": "Follow on LinkedIn ↗",
+      "link_text_lv": "Sekot LinkedIn ↗",
+      "link_url": "https://www.linkedin.com/company/ai-safety-latvia/",
+      "is_placeholder": true
+    }
+  ]
+}

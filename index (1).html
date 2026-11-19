@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Safety Latvia — From Latvia to the world. For safer AI.</title>
+  <meta name="description" content="Independent nonprofit community connecting Latvia with the global AI safety conversation — through research, dialogue and community." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF8F5',
+            surface: '#F3EFE8',
+            card: '#FFFFFF',
+            baltic: '#1B3B5A',
+            balticDark: '#132B42',
+            balticMuted: '#4A637A',
+            amberAccent: '#C8822E',
+            amberSoft: '#F6EDE0',
+            borderWarm: '#E3DDD3'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #1B3B5A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-editorial {
+      font-family: 'Newsreader', Georgia, serif;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amberAccent/20 selection:text-baltic">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-borderWarm">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <span class="w-7 h-7 rounded-md bg-baltic text-paper flex items-center justify-center font-serif text-sm font-medium tracking-tight group-hover:bg-amberAccent transition-colors">
+          AS
+        </span>
+        <span class="font-semibold text-baltic tracking-tight text-sm sm:text-base">AI Safety Latvia</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-balticMuted">
+        <a href="#about" class="hover:text-baltic transition-colors" data-i18n="nav_about">About</a>
+        <a href="#focus" class="hover:text-baltic transition-colors" data-i18n="nav_focus">Our focus</a>
+        <a href="#news" class="hover:text-baltic transition-colors" data-i18n="nav_news">News &amp; events</a>
+        <a href="#involved" class="hover:text-baltic transition-colors inline-flex items-center gap-1">
+          <span data-i18n="nav_involved">Get involved</span>
+          <span class="text-amberAccent">↗</span>
+        </a>
+      </nav>
+
+      <!-- Language Switcher + Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <div class="inline-flex items-center bg-surface border border-borderWarm rounded-full p-0.5 text-xs font-semibold">
+          <button id="btn-en" onclick="setLang('en')" class="px-2.5 py-1 rounded-full bg-baltic text-paper transition-all">EN</button>
+          <button id="btn-lv" onclick="setLang('lv')" class="px-2.5 py-1 rounded-full text-balticMuted hover:text-baltic transition-all">LV</button>
+        </div>
+
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-baltic hover:bg-surface" aria-label="Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-borderWarm bg-paper px-6 py-4 space-y-3 text-sm font-medium">
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-balticMuted hover:text-baltic" data-i18n="nav_about">About</a>
+      <a href="#focus" onclick="toggleMobileMenu()" class="block text-balticMuted hover:text-baltic" data-i18n="nav_focus">Our focus</a>
+      <a href="#news" onclick="toggleMobileMenu()" class="block text-balticMuted hover:text-baltic" data-i18n="nav_news">News &amp; events</a>
+      <a href="#involved" onclick="toggleMobileMenu()" class="block text-baltic font-semibold" data-i18n="nav_involved_arrow">Get involved ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-borderWarm">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberSoft border border-amberAccent/25 text-xs font-medium text-baltic mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-amberAccent"></span>
+        <span data-i18n="hero_badge">Independent nonprofit community · Latvia</span>
+      </div>
+
+      <h1 class="font-editorial text-4xl sm:text-6xl font-normal text-baltic tracking-tight leading-[1.1] max-w-3xl mb-6" data-i18n="hero_title">
+        From Latvia to the world. For safer AI.
+      </h1>
+
+      <p class="text-lg sm:text-xl text-balticMuted max-w-2xl leading-relaxed mb-10" data-i18n="hero_subtitle">
+        Connecting Latvia with the global AI safety conversation — through research, dialogue and community.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#about" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-baltic text-paper text-sm font-medium hover:bg-balticDark transition-colors shadow-sm">
+          <span data-i18n="hero_cta_primary">Discover our community</span>
+          <span class="text-amberAccent">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/company/ai-safety-latvia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-card border border-borderWarm text-baltic text-sm font-medium hover:border-amberAccent transition-colors">
+          <span data-i18n="hero_cta_secondary">Follow on LinkedIn</span>
+          <span class="text-amberAccent">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Who We Are / About -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20 border-b border-borderWarm">
+      <div class="grid md:grid-cols-12 gap-10 mb-14">
+        <div class="md:col-span-5">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amberAccent mb-3" data-i18n="about_eyebrow">
+            Local roots. Global connections.
+          </p>
+          <h2 class="font-editorial text-3xl sm:text-4xl text-baltic mb-3" data-i18n="about_title">
+            Who we are
+          </h2>
+          <p class="text-sm font-medium text-balticMuted" data-i18n="about_motto">
+            Curiosity. Responsibility. Connection.
+          </p>
+        </div>
+        <div class="md:col-span-7 flex items-center">
+          <p class="text-base sm:text-lg text-balticMuted leading-relaxed" data-i18n="about_text">
+            AI Safety Latvia is a Latvian nonprofit association building a community around the safe development and use of advanced AI. We believe meaningful progress begins with informed conversations and connections across disciplines.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Pillars -->
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-card border border-borderWarm hover:border-amberAccent/50 transition-colors">
+          <div class="text-2xl text-amberAccent mb-4 font-light">◌</div>
+          <h3 class="text-lg font-semibold text-baltic mb-2" data-i18n="pillar_1_title">Explore</h3>
+          <p class="text-sm text-balticMuted leading-relaxed" data-i18n="pillar_1_text">
+            Engage with research, emerging questions, and diverse perspectives on AI safety.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-card border border-borderWarm hover:border-amberAccent/50 transition-colors">
+          <div class="text-2xl text-amberAccent mb-4 font-light">↗</div>
+          <h3 class="text-lg font-semibold text-baltic mb-2" data-i18n="pillar_2_title">Connect</h3>
+          <p class="text-sm text-balticMuted leading-relaxed" data-i18n="pillar_2_text">
+            Bring together people interested in AI safety in Latvia and the wider international community.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-card border border-borderWarm hover:border-amberAccent/50 transition-colors">
+          <div class="text-2xl text-amberAccent mb-4 font-light">✳</div>
+          <h3 class="text-lg font-semibold text-baltic mb-2" data-i18n="pillar_3_title">Share</h3>
+          <p class="text-sm text-balticMuted leading-relaxed" data-i18n="pillar_3_text">
+            Make relevant research and ideas easier to discover, discuss, and understand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Focus -->
+    <section id="focus" class="max-w-5xl mx-auto px-6 py-20 border-b border-borderWarm">
+      <div class="grid md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-7 space-y-5">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amberAccent" data-i18n="focus_eyebrow">
+            Our focus
+          </p>
+          <h2 class="font-editorial text-3xl sm:text-4xl text-baltic leading-tight" data-i18n="focus_title">
+            Important questions deserve thoughtful discussion.
+          </h2>
+          <p class="text-base text-balticMuted leading-relaxed" data-i18n="focus_text_1">
+            From technical and societal AI risks to long-term human–AI interaction, we are interested in the research and conversations that help people understand the challenges ahead.
+          </p>
+          <p class="text-sm text-balticMuted leading-relaxed pt-1" data-i18n="focus_text_2">
+            We are an emerging community. This website is a starting point, and our work will evolve as the community grows.
+          </p>
+        </div>
+
+        <div class="md:col-span-5">
+          <div class="p-8 rounded-2xl bg-baltic text-paper shadow-sm relative overflow-hidden">
+            <div class="text-2xl font-serif tracking-wide text-amberAccent mb-6">AI✳</div>
+            <p class="font-editorial text-xl sm:text-2xl leading-snug text-paper/95" data-i18n="focus_card_quote">
+              People, research and responsible conversations about the future.
+            </p>
+            <div class="mt-8 pt-5 border-t border-paper/15 flex items-center justify-between text-xs text-paper/70">
+              <span>Riga · Latvia</span>
+              <span>aisafetylatvia.org</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Events -->
+    <section id="news" class="max-w-5xl mx-auto px-6 py-20 border-b border-borderWarm">
+      <div class="max-w-2xl mb-12">
+        <p class="text-xs font-semibold uppercase tracking-widest text-amberAccent mb-3" data-i18n="news_eyebrow">
+          News &amp; events
+        </p>
+        <h2 class="font-editorial text-3xl sm:text-4xl text-baltic mb-3" data-i18n="news_title">
+          What's happening.
+        </h2>
+        <p class="text-base text-balticMuted leading-relaxed" data-i18n="news_subtitle">
+          Announcements, community updates and upcoming events will appear here. We are building this space as the community grows.
+        </p>
+      </div>
+
+      <!-- Dynamic Cards Grid -->
+      <div id="news-grid" class="grid md:grid-cols-3 gap-6">
+        <!-- Populated from content/news.json -->
+      </div>
+
+      <p id="placeholder-note" class="text-xs text-balticMuted/80 mt-6 italic" data-i18n="news_disclaimer">
+        These are placeholders, not announcements of scheduled events.
+      </p>
+    </section>
+
+    <!-- Get Involved -->
+    <section id="involved" class="max-w-5xl mx-auto px-6 py-20">
+      <div class="p-8 sm:p-14 rounded-2xl bg-surface border border-borderWarm flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amberAccent mb-3" data-i18n="involved_eyebrow">
+            Get involved
+          </p>
+          <h2 class="font-editorial text-3xl sm:text-4xl text-baltic mb-4 leading-tight" data-i18n="involved_title">
+            Interested in AI safety? Let's connect.
+          </h2>
+          <p class="text-base text-balticMuted leading-relaxed" data-i18n="involved_text">
+            Whether you are a researcher, student, professional, or simply curious, we would love to hear from people interested in the conversation.
+          </p>
+        </div>
+
+        <div class="shrink-0">
+          <a href="https://www.linkedin.com/company/ai-safety-latvia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-baltic text-paper text-sm font-medium hover:bg-balticDark transition-colors shadow-sm">
+            <span data-i18n="involved_cta">Connect via LinkedIn</span>
+            <span class="text-amberAccent">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-borderWarm bg-paper">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-balticMuted">
+      <p>© 2026 AI Safety Latvia · Latvia</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.linkedin.com/company/ai-safety-latvia/" target="_blank" rel="noopener noreferrer" class="hover:text-baltic transition-colors">LinkedIn</a>
+        <span>·</span>
+        <a href="https://aisafetylatvia.org" class="hover:text-baltic transition-colors">aisafetylatvia.org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_focus: "Our focus",
+        nav_news: "News & events",
+        nav_involved: "Get involved",
+        nav_involved_arrow: "Get involved ↗",
+        hero_badge: "Independent nonprofit community · Latvia",
+        hero_title: "From Latvia to the world. For safer AI.",
+        hero_subtitle: "Connecting Latvia with the global AI safety conversation — through research, dialogue and community.",
+        hero_cta_primary: "Discover our community",
+        hero_cta_secondary: "Follow on LinkedIn",
+        about_eyebrow: "Local roots. Global connections.",
+        about_title: "Who we are",
+        about_motto: "Curiosity. Responsibility. Connection.",
+        about_text: "AI Safety Latvia is a Latvian nonprofit association building a community around the safe development and use of advanced AI. We believe meaningful progress begins with informed conversations and connections across disciplines.",
+        pillar_1_title: "Explore",
+        pillar_1_text: "Engage with research, emerging questions, and diverse perspectives on AI safety.",
+        pillar_2_title: "Connect",
+        pillar_2_text: "Bring together people interested in AI safety in Latvia and the wider international community.",
+        pillar_3_title: "Share",
+        pillar_3_text: "Make relevant research and ideas easier to discover, discuss, and understand.",
+        focus_eyebrow: "Our focus",
+        focus_title: "Important questions deserve thoughtful discussion.",
+        focus_text_1: "From technical and societal AI risks to long-term human–AI interaction, we are interested in the research and conversations that help people understand the challenges ahead.",
+        focus_text_2: "We are an emerging community. This website is a starting point, and our work will evolve as the community grows.",
+        focus_card_quote: "People, research and responsible conversations about the future.",
+        news_eyebrow: "News & events",
+        news_title: "What's happening.",
+        news_subtitle: "Announcements, community updates and upcoming events will appear here. We are building this space as the community grows.",
+        news_disclaimer: "These are placeholders, not announcements of scheduled events.",
+        involved_eyebrow: "Get involved",
+        involved_title: "Interested in AI safety? Let's connect.",
+        involved_text: "Whether you are a researcher, student, professional, or simply curious, we would love to hear from people interested in the conversation.",
+        involved_cta: "Connect via LinkedIn"
+      },
+      lv: {
+        nav_about: "Par mums",
+        nav_focus: "Mūsu fokuss",
+        nav_news: "Jaunumi un pasākumi",
+        nav_involved: "Iesaistīties",
+        nav_involved_arrow: "Iesaistīties ↗",
+        hero_badge: "Neatkarīga bezpeļņas kopiena · Latvija",
+        hero_title: "No Latvijas pasaulei. Drošākam mākslīgajam intelektam.",
+        hero_subtitle: "Savienojam Latviju ar globālo sarunu par MI drošību — caur pētniecību, dialogu un kopienu.",
+        hero_cta_primary: "Iepazīsti mūsu kopienu",
+        hero_cta_secondary: "Sekot LinkedIn",
+        about_eyebrow: "Vietējās saknes. Globāli sakari.",
+        about_title: "Kas mēs esam",
+        about_motto: "Zinātkāre. Atbildība. Sadarbība.",
+        about_text: "AI Safety Latvia ir Latvijas bezpeļņas biedrība, kas veido kopienu ap progresīva mākslīgā intelekta drošu attīstību un lietošanu. Mēs ticam, ka jēgpilns progress sākas ar informētām sarunām un starpdisciplināru sadarbību.",
+        pillar_1_title: "Izpētīt",
+        pillar_1_text: "Iedziļināties pētījumos, aktuālajos jautājumos un dažādos skatījumos par MI drošību.",
+        pillar_2_title: "Savienot",
+        pillar_2_text: "Apvienot cilvēkus Latvijā un plašākā starptautiskajā kopienā, kurus interesē MI drošība.",
+        pillar_3_title: "Dalīties",
+        pillar_3_text: "Padarīt būtiskus pētījumus un idejas vieglāk atrodamas, apspriežamas un saprotamas.",
+        focus_eyebrow: "Mūsu fokuss",
+        focus_title: "Svarīgi jautājumi prasa pārdomātu diskusiju.",
+        focus_text_1: "No tehniskiem un sabiedriskiem MI riskiem līdz ilgtermiņa cilvēka un MI mijiedarbībai — mūs interesē pētījumi un sarunas, kas palīdz izprast gaidāmos izaicinājumus.",
+        focus_text_2: "Mēs esam augoša kopiena. Šī vietne ir sākumpunkts, un mūsu darbs attīstīsies līdz ar kopienas izaugsmi.",
+        focus_card_quote: "Cilvēki, pētniecība un atbildīgas sarunas par nākotni.",
+        news_eyebrow: "Jaunumi un pasākumi",
+        news_title: "Kas notiek.",
+        news_subtitle: "Šeit tiks publicēti paziņojumi, kopienas jaunumi un gaidāmie pasākumi. Mēs veidojam šo telpu, kopienai augot.",
+        news_disclaimer: "Šie ir informatīvi paraugi, nevis paziņojumi par ieplānotiem pasākumiem.",
+        involved_eyebrow: "Iesaistīties",
+        involved_title: "Interesē MI drošība? Sazināsimies.",
+        involved_text: "Neatkarīgi no tā, vai esat pētnieks, students, profesionālis vai vienkārši zinātkārs — mēs labprāt iepazīsimies ar ikvienu, kuru interesē šī tēma.",
+        involved_cta: "Sazināties LinkedIn"
+      }
+    };
+
+    let currentLang = 'en';
+    let newsItems = [];
+
+    function renderNews() {
+      const grid = document.getElementById('news-grid');
+      const note = document.getElementById('placeholder-note');
+      if (!grid) return;
+
+      const hasPlaceholders = newsItems.some(item => item.is_placeholder);
+      if (note) {
+        note.style.display = hasPlaceholders ? 'block' : 'none';
+      }
+
+      grid.innerHTML = newsItems.map(item => {
+        const cat = currentLang === 'lv' ? (item.category_lv || item.category_en) : item.category_en;
+        const tag = currentLang === 'lv' ? (item.tag_lv || item.tag_en) : item.tag_en;
+        const title = currentLang === 'lv' ? (item.title_lv || item.title_en) : item.title_en;
+        const body = currentLang === 'lv' ? (item.body_lv || item.body_en) : item.body_en;
+        const linkText = currentLang === 'lv' ? (item.link_text_lv || item.link_text_en) : item.link_text_en;
+        const linkUrl = item.link_url;
+
+        return `
+          <article class="p-6 rounded-xl bg-card border border-borderWarm flex flex-col justify-between hover:border-amberAccent/50 transition-colors">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-amberAccent">${cat}</span>
+                ${tag ? `<span class="text-[11px] font-medium px-2 py-0.5 rounded bg-surface text-balticMuted">${tag}</span>` : ''}
+              </div>
+              <h3 class="text-lg font-semibold text-baltic mb-2.5 leading-snug">${title}</h3>
+              <p class="text-sm text-balticMuted leading-relaxed">${body}</p>
+            </div>
+            ${linkUrl && linkText ? `
+              <div class="mt-5 pt-4 border-t border-borderWarm/60">
+                <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-baltic hover:text-amberAccent transition-colors">
+                  ${linkText}
+                </a>
+              </div>
+            ` : ''}
+          </article>
+        `;
+      }).join('');
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      const btnEn = document.getElementById('btn-en');
+      const btnLv = document.getElementById('btn-lv');
+      if (lang === 'en') {
+        btnEn.className = 'px-2.5 py-1 rounded-full bg-baltic text-paper transition-all';
+        btnLv.className = 'px-2.5 py-1 rounded-full text-balticMuted hover:text-baltic transition-all';
+      } else {
+        btnLv.className = 'px-2.5 py-1 rounded-full bg-baltic text-paper transition-all';
+        btnEn.className = 'px-2.5 py-1 rounded-full text-balticMuted hover:text-baltic transition-all';
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      renderNews();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Load news from content/news.json
+    fetch('content/news.json')
+      .then(res => res.json())
+      .then(data => {
+        newsItems = data.items || [];
+        renderNews();
+      })
+      .catch(() => {
+        // Fallback if opened locally without server
+        newsItems = [
+          {
+            category_en: "UPCOMING EVENTS",
+            category_lv: "Gaidāmie pasākumi",
+            tag_en: "Watch this space",
+            tag_lv: "Sekojiet līdzi",
+            title_en: "Watch this space",
+            title_lv: "Sekojiet līdzi jaunumiem",
+            body_en: "We will announce future gatherings and activities here as they are confirmed.",
+            body_lv: "Šeit paziņosim par gaidāmajām tikšanās reizēm un pasākumiem, tiklīdz tie tiks apstiprināti.",
+            is_placeholder: true
+          },
+          {
+            category_en: "COMMUNITY NEWS",
+            category_lv: "Kopienas jaunumi",
+            tag_en: "Update",
+            tag_lv: "Jaunums",
+            title_en: "Updates from AI Safety Latvia",
+            title_lv: "AI Safety Latvia aktualitātes",
+            body_en: "News about our initiatives and opportunities to connect will be published here.",
+            body_lv: "Šeit tiks publicētas ziņas par mūsu iniciatīvām un iespējām iesaistīties.",
+            is_placeholder: true
+          },
+          {
+            category_en: "RESEARCH & IDEAS",
+            category_lv: "Pētniecība un idejas",
+            tag_en: "LinkedIn",
+            tag_lv: "LinkedIn",
+            title_en: "What we're reading",
+            title_lv: "Ko mēs lasām",
+            body_en: "For regular research highlights and articles, visit our LinkedIn page.",
+            body_lv: "Regulārus pētījumu apskatus un rakstus atradīsiet mūsu LinkedIn lapā.",
+            link_text_en: "Follow on LinkedIn ↗",
+            link_text_lv: "Sekot LinkedIn ↗",
+            link_url: "https://www.linkedin.com/company/ai-safety-latvia/",
+            is_placeholder: true
+          }
+        ];
+        renderNews();
+      });
+
+    // Redirect to /admin/ after Netlify Identity invite confirmation
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
